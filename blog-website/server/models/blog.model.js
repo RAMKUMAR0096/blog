@@ -1,49 +1,5 @@
 import mongoose from "mongoose";
 
-// const bloogSchema = new mongoose.Schema({
-//     title : {
-//         type : String,
-//     },
-//     image : {
-//         type : Array,
-//         default : []
-//     },
-//     content : {
-//         type : String,
-//         default : ""
-//     },
-//     tags : {
-//         type : String,
-//         defualt : ""
-//     },
-//     status : {
-//         type : String,
-//         enum : ["PUBLISHED","DRAFT"],
-//         default : "DRAFT"
-//     },
-//     publish : {
-//         type : Boolean,
-//         default : true
-//     }
-// },{
-//     timestamps : true
-// })
-
-// //create a text index
-// blogSchema.index({
-//     title  : "text",
-//     content : 'text'
-// },{
-//     name : 10,
-//     content : 5
-// })
-
-
-// const BlogModel = mongoose.model('blog',bloogSchema)
-
-
-// models/Blog.js
-// const mongoose = require('mongoose');
 
 const blogSchema = new mongoose.Schema({
   title: {
@@ -55,8 +11,8 @@ const blogSchema = new mongoose.Schema({
     required: true,
   },
   tags: {
-    type: [String],
-    default: [],
+    type: String,
+    default:'',
   },
   status: {
     type: String,

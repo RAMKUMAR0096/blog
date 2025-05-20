@@ -7,6 +7,7 @@ import morgan from 'morgan'
 import helmet from 'helmet'
 import connectDatabase from './config/connectDatabase.js';
 import blogRouter from './route/blog.route.js';
+import userRouter from './route/user.route.js'
 
 
 const app =express();
@@ -30,6 +31,7 @@ app.get('/',(request,response)=>{
     })
 })
 
+app.use('/api/user',userRouter)
 app.use('/api',blogRouter)
 
 const PORT=process.env.PORT

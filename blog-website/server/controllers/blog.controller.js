@@ -18,7 +18,7 @@ export async function saveinPublish (req, res){
       let blog; 
       if (id) {
         blog = await BlogModel.findByIdAndUpdate(
-          id,
+          {_id:id},
           { title, content, tags, status: 'published' },
         );
       } else {
@@ -40,7 +40,7 @@ export async function saveinDraftandUpdate (req, res){
       let blog;
       if (id) {
         blog = await BlogModel.findByIdAndUpdate(
-          id,
+          {_id:id},
           { title, content, tags, status: 'draft' },
         );
       } else {
